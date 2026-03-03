@@ -3,17 +3,17 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Project {
+public class Workspace {
     private String name;
     private String description;
     private LocalDateTime createdDate;
-    private List<Workspace> workspaces;
+    private List<Task> tasks;
 
-    public Project(String name, String description) {
+    public Workspace(String name, String description) {
         this.name = name;
         this.description = description;
         this.createdDate = LocalDateTime.now();
-        this.workspaces = new ArrayList<>();
+        this.tasks = new ArrayList<>();
     }
 
     public String getName() {
@@ -36,17 +36,17 @@ public class Project {
         return createdDate;
     }
 
-    public List<Workspace> getWorkspaces() {
-        return workspaces;
+    public List<Task> getTasks() {
+        return tasks;
     }
 
-    public void addWorkspace(Workspace workspace) {
-        workspaces.add(workspace);
+    public void addTask(Task task) {
+        tasks.add(task);
     }
 
-    public void removeWorkspace(int index) {
-        if (index >= 0 && index < workspaces.size()) {
-            workspaces.remove(index);
+    public void removeTask(int index) {
+        if (index >= 0 && index < tasks.size()) {
+            tasks.remove(index);
         }
     }
 
@@ -57,10 +57,10 @@ public class Project {
 
     @Override
     public String toString() {
-        return "Project{" +
+        return "Workspace{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", workspaces=" + workspaces.size() +
+                ", tasks=" + tasks.size() +
                 ", createdDate=" + getFormattedDate() +
                 '}';
     }
