@@ -59,6 +59,25 @@ java -cp bin ProjectManagementApp
 - Team member assignment
 - Deadline and progress tracking
 
+## Customizing Appearance
+
+You can change the application window title and icon by editing `ProjectManagementApp.java`:
+
+1. Modify the `APP_TITLE` constant near the top of the class.
+2. Set `ICON_RESOURCE` to the resource path of your icon, for example `"/finalis_icon.jpg"` or `"/app_icon.png"`.
+   * If the file is included on the classpath (copied under `bin/` or inside a JAR), the program will load it via `getResource(...)`.
+   * If the resource lookup fails, the code falls back to loading a file from the working directory using the same path (e.g. `./finalis_icon.jpg`).
+
+To make the icon available at runtime you can either:
+
+- Manually copy the image into `bin/` after compilation (e.g. `cp src/app_icon.png bin/`).
+- Run the program from the project root or from `src/`; the code will look in both `.` and `./src`.
+- Adjust your build process or IDE settings to include non-Java files in the output directory.
+
+When using `java -cp bin ProjectManagementApp`, ensure the icon file is accessible from one of those locations. The constant `ICON_RESOURCE` should match the filename you copied.
+
+After making changes, recompile and run the application to see the updated title and icon.
+
 ---
 
 _Initialized: March 2, 2026_

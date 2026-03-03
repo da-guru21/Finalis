@@ -4,6 +4,11 @@ import java.util.List;
 import java.awt.*;
 
 public class ProjectManagementApp extends JFrame {
+    // application constants
+    private static final String APP_TITLE = "FINALIS"; // change as needed
+    // the file currently shipped is app_icon.png in the src/ directory
+    private static final String ICON_RESOURCE = "/app_icon.png";
+
     private List<Project> projects;
     private Project selectedProject;
     private Workspace selectedWorkspace;
@@ -31,7 +36,19 @@ public class ProjectManagementApp extends JFrame {
 
     public ProjectManagementApp() {
         System.out.println("[DEBUG] ProjectManagementApp constructor invoked");
-        setTitle("Project Management App - Hierarchical");
+        // set the window title and icon
+        setTitle(APP_TITLE);
+        try {
+            Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource(ICON_RESOURCE));
+            if (icon != null) {
+                setIconImage(icon);
+            } else {
+                System.err.println("[WARN] Icon resource not found: " + ICON_RESOURCE);
+            }
+        } catch (Exception ex) {
+            System.err.println("[WARN] Unable to load icon: " + ex.getMessage());
+        }
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1200, 700);
         setLocationRelativeTo(null);
