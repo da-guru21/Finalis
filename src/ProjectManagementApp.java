@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class ProjectManagementApp extends JFrame {
     // application constants
-    private static final String APP_TITLE = "FINALIS"; // change as needed
+    private static final String APP_TITLE = "FINALIS";
     // the file currently shipped is app_icon.png in the src/ directory
     private static final String ICON_RESOURCE = "/app_icon.png";
 
