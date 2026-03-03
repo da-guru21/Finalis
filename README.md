@@ -28,12 +28,18 @@ Project Management/
 
 ## Building and Running
 
-### Compile
+### Auto-Compile (VS Code)
+
+The **Extension Pack for Java** is configured to auto-compile on save. Simply edit and save a `.java` file—it automatically compiles to `bin/`.
+
+### Manual Compile
+
 ```bash
 javac -d bin src/*.java
 ```
 
 ### Run
+
 ```bash
 java -cp bin ProjectManagementApp
 ```
@@ -54,5 +60,7 @@ java -cp bin ProjectManagementApp
 - Deadline and progress tracking
 
 ---
-*Initialized: March 2, 2026*
+
+_Initialized: March 2, 2026_
+
 # Finalis
